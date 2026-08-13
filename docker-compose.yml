@@ -1,0 +1,23 @@
+services:
+  db:
+    container_name: ecom-postgres
+    image: postgres:14.22-alpine3.23
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ecom-db
+      PGDATA: /data/postgres
+    volumes:
+      - ecom-db:/data/postgres
+    ports:
+      - "5332:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  ecom-db:
