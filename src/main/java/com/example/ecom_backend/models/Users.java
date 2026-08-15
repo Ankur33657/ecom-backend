@@ -2,10 +2,9 @@ package com.example.ecom_backend.models;
 
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.Value;
 
 @Data
 @Entity
@@ -13,15 +12,18 @@ import lombok.Data;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @NotBlank(message = "username is required")
+    @NotNull
+    @Size(max=200,min=8,message = "UserName must be between 8 and 200 characters")
     private String userName;
 
 
     @NotBlank(message = "email is required")
+    @NotNull
     @Column(unique = true)
-    @Email
+    @Email(message = "Invalid email format")
     private String email;
 
     @NotBlank(message = "password is required")
@@ -30,7 +32,8 @@ public class Users {
     private String password;
 
 
-    private String roles;
+    @Enumerated(EnumType.STRING)
+    private  Role roles;
 
 
 }

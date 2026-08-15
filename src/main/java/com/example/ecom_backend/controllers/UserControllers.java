@@ -1,9 +1,12 @@
 package com.example.ecom_backend.controllers;
 
 
+import com.example.ecom_backend.dto.User.UserDto;
 import com.example.ecom_backend.models.Users;
 import com.example.ecom_backend.services.Users.UserService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,18 +22,18 @@ public class UserControllers {
     }
 
     @GetMapping
-   public List<Users> getALlUsers(){
-     return userService.getAllUsers();
+   public ResponseEntity<List<UserDto>> getALlUsers(@RequestParam int page,@RequestParam(defaultValue = "10") int size, @RequestParam(required = false, defaultValue = "asc") String direction,@RequestParam(required = false, defaultValue = "id") String sortBy) throws Exception{
+     return ResponseEntity.status(HttpStatus.OK).body(userService.getAllUsers(page,size,direction,sortBy));
    }
 
     @PostMapping
-    public Users createUsers(@Valid @RequestBody Users users) throws Exception{
-        return userService.createUsers(users);
+    public ResponseEntity<UserDto> createUsers(@Valid @RequestBody Users user) throws Exception{
+       return  ResponseEntity.status(HttpStatus.CREATED).body(userService.createUsers(user));
    }
 
     @GetMapping("/{id}")
-    public Users getUserById(@PathVariable Long id){
-       return userService.getUserById(id);
+    public ResponseEntity<UserDto> getUserById(@PathVariable Long id) throws Exception{
+       return ResponseEntity.status(HttpStatus.OK) .body(userService.getUserById(id));
 
    }
 
