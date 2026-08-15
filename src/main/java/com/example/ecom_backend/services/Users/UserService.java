@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface UserService {
     List<UserDto> getAllUsers(int page,int size,String direction,String sortBy);
-    UserDto createUsers(Users user);
+//    UserDto createUsers(Users user);
     UserDto getUserById(Long id);
 }

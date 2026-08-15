@@ -26,10 +26,10 @@ public class UserControllers {
      return ResponseEntity.status(HttpStatus.OK).body(userService.getAllUsers(page,size,direction,sortBy));
    }
 
-    @PostMapping
-    public ResponseEntity<UserDto> createUsers(@Valid @RequestBody Users user) throws Exception{
-       return  ResponseEntity.status(HttpStatus.CREATED).body(userService.createUsers(user));
-   }
+//    @PostMapping
+//    public ResponseEntity<UserDto> createUsers(@Valid @RequestBody Users user) throws Exception{
+//       return  ResponseEntity.status(HttpStatus.CREATED).body(userService.createUsers(user));
+//   }
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDto> getUserById(@PathVariable Long id) throws Exception{

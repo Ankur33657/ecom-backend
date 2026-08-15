@@ -37,13 +37,13 @@ public class UserServiceImpl implements UserService{
 
     }
 
-    @Override
-    public UserDto createUsers(Users user) {Users user1=userRepository.save(user);
-      return UsersMapper.toUserResponse(user1);
-
-
-
-    }
+//    @Override
+//    public UserDto createUsers(Users user) {Users user1=userRepository.save(user);
+//      return UsersMapper.toUserResponse(user1);
+//
+//
+//
+//    }
 
     @Override
     public UserDto getUserById(Long id) {

@@ -1,5 +1,7 @@
 package com.example.ecom_backend.services.Auth;
 
-public interface AuthService {
+import com.example.ecom_backend.dto.User.CreateUserDto;
 
+public interface AuthService {
+  String CreateUser(CreateUserDto user);
 }
