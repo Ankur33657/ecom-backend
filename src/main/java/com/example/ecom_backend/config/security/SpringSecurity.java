@@ -1,4 +1,4 @@
-package com.example.ecom_backend.config;
+package com.example.ecom_backend.config.security;
 
 
 import com.example.ecom_backend.config.exceptions.UnAuthorizedException;

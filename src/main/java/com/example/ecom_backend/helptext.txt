@@ -6,3 +6,5 @@ Dependency Injection- Injecting the Object creating by beans in project
           2. Create a constructor of the object (Recommended Ways) This ways helps to create variable as final.
 
 
+@CachePut() used to put the updated data
+@CacheEvect() use to remove the data from cache

@@ -1,4 +1,4 @@
-package com.example.ecom_backend.services.Auth;
+package com.example.ecom_backend.config.security;
 
 import com.example.ecom_backend.config.exceptions.NotFoundException;
 import com.example.ecom_backend.models.Users;

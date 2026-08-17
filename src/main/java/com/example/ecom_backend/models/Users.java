@@ -16,7 +16,7 @@ public class Users {
 
     @NotBlank(message = "username is required")
     @NotNull
-    @Size(max=200,min=8,message = "UserName must be between 8 and 200 characters")
+    @Size(max=200,min=8,message = "fullName must be between 8 and 200 characters")
     private String userName;
 
 

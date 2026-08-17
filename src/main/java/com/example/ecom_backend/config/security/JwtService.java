@@ -1,5 +1,5 @@
 
-package com.example.ecom_backend.services.Auth;
+package com.example.ecom_backend.config.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;

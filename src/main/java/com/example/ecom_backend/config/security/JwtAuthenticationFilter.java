@@ -1,8 +1,5 @@
-package com.example.ecom_backend.config;
+package com.example.ecom_backend.config.security;
 
-import com.example.ecom_backend.services.Auth.JwtService;
-import com.example.ecom_backend.services.Auth.userAuthService;
-import com.example.ecom_backend.services.Users.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
